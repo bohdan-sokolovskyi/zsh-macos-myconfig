@@ -1,17 +1,20 @@
 ################################## PROMPT ##################################
-# colors
-autoload -U colors && colors
-
-# Load version control information
+# load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats 'on branch %b'
+# format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git:*' formats 'B: %{$fg[yellow]%}[$fg[cyan]%}%b%{$fg[yellow]%}]'
+
+# enable substitution in the prompt.
+setopt prompt_subst
 
 # prompt
-export PS1="%{$fg[green]%}╔ %{$fg[red]%}D: %{$fg[yellow]%}[%{$fg[magenta]%}%d%{$fg[yellow]%}] %{$fg[red]%}TD: %{$fg[yellow]%}[%{$fg[magenta]%}$(date +%d.%m.%y-%H:%M:%S)%{$fg[yellow]%}] %{$fg[red]%}B: %{$fg[yellow]%}[$fg[cyan]%}${vcs_info_msg_0_}%{$fg[yellow]%}]
-%{$fg[green]%}╚ %{$fg[yellow]%}[%{$fg[cyan]%}%n%{$fg[yellow]%}] %{$fg[blue]%}λ%{$fg[yellow]%}(%{$fg[magenta]%}\$%{$fg[yellow]%}) %{$fg[green]%}⇒ %{$fg[white]%}"
+autoload -U colors && colors 
+
+export PS1="%{$fg[green]%}╔ %{$fg[red]%}D: %{$fg[yellow]%}[%{$fg[magenta]%}%~%{$fg[yellow]%}] %{$fg[red]%}D&T: %{$fg[yellow]%}[%{$fg[magenta]%}$(date +%d.%m.%y-%H:%M:%S)%{$fg[yellow]%}] %{$fg[red]%} ${vcs_info_msg_0_} 
+%{$fg[green]%}╚ %{$fg[yellow]%}[%{$fg[cyan]%}%n%{$fg[yellow]%}] %{$fg[blue]%}λ%{$fg[yellow]%}(%{$fg[magenta]%}\$%{$fg[yellow]%}) %{$fg[green]%}⇒ %{$fg[white]%}" 
 
 ################################## HOME FOR PROGRAMS ##################################
 
