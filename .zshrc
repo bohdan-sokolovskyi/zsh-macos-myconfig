@@ -16,9 +16,6 @@ autoload -U colors && colors
 export PS1="%{$fg[green]%}╔ %{$fg[red]%}D: %{$fg[yellow]%}[%{$fg[magenta]%}%~%{$fg[yellow]%}] %{$fg[red]%}D&T: %{$fg[yellow]%}[%{$fg[magenta]%}$(date +%d.%m.%y-%H:%M:%S)%{$fg[yellow]%}] %{$fg[red]%} ${vcs_info_msg_0_} 
 %{$fg[green]%}╚ %{$fg[yellow]%}[%{$fg[cyan]%}%n%{$fg[yellow]%}] %{$fg[blue]%}λ%{$fg[yellow]%}(%{$fg[magenta]%}\$%{$fg[yellow]%}) %{$fg[green]%}⇒ %{$fg[white]%}" 
 
-################################## HOME FOR PROGRAMS ##################################
-
-
 ################################## ALIASES ##################################
 alias sshg='ssh -Y4C'
 alias ll='ls -laG'
