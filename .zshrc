@@ -19,6 +19,7 @@ export PS1="%{$fg[green]%}╔ %{$fg[red]%}D: %{$fg[yellow]%}[%{$fg[magenta]%}%d%
 ################################## ALIASES ##################################
 alias sshg='ssh -Y4C'
 alias ll='ls -laG'
+alias l='ll'
 alias untar='tar -zxvf'
 alias wget='wget -c'
 alias getpass='openssl rand -base64 20'
